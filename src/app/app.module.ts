@@ -10,6 +10,7 @@ import { AppRoutes } from './config.route';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './product-seller/dashboard/dashboard.component';
 import { InventoryComponent } from './product-seller/inventory/inventory.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { InventoryComponent } from './product-seller/inventory/inventory.compone
     CarouselModule.forRoot(),
     SharedModule,
     PopoverModule.forRoot(),
-    RouterModule.forRoot(AppRoutes)
+    RouterModule.forRoot(AppRoutes),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

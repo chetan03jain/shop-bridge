@@ -1,0 +1,11 @@
+.fields{
+  margin-right: 5%;
+  width: 45%;
+}
+.red-asterik{
+  color: red;
+}
+.categroy-dropdown{
+  width: 260px;
+  border:1px solid #ccc;
+}
