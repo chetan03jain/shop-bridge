@@ -1,0 +1,51 @@
+<div class="container">
+  <h1>Dashboard</h1>
+  <hr>
+  <div class="cards-container">
+  <div class="cards">
+    <div class="item-details">
+      <span class="item-head">Total Views</span>
+      <p class="item-body">{{clicksCounter}}</p>
+    </div>
+    </div>
+    <div class="cards">
+      <div class="item-details">
+        <span class="item-head">Total Products Sold</span>
+        <p class="item-body">{{productsSold}}</p>
+      </div>
+      </div>
+      <div class="review-cards">
+        <marquee direction="up">
+        <div class="review-card" *ngFor="let review of reviews">
+          <p><b>{{review.product}}</b></p>
+          <p>{{review.name}}</p>
+          <p>{{review.date}}</p>
+          <p>{{review.location}}</p>
+          <p>
+            <span class="glyphicon glyphicon-star" *ngFor="let star of stars(review.rating)" style="color: orange;"></span>
+        </p>
+          <p><b>{{review.feedback}}</b></p>
+        </div>
+      </marquee>
+        </div>
+        </div>
+        <div style="margin-top: 30px;
+        margin-bottom: 25px;display: flex;">
+          <div class="cards">
+            <div class="item-details">
+              <span class="item-head">Total Products Left</span>
+              <p class="item-body">{{productsLeft}}</p>
+            </div>
+            </div>
+            <div class="cards">
+              <div class="item-details">
+                <span class="item-head">Total Revenue</span>
+                <p class="item-body">₹{{revenue}}</p>
+              </div>
+              </div>
+              <div class="revenue-report">
+                <a href="#">Click here for Detailed Revenue Report <span class="glyphicon glyphicon-arrow-right"></span></a>
+              </div>
+        </div>
+</div>
+

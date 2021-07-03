@@ -1,0 +1,61 @@
+.container{
+margin-left: 3%;
+padding: 0;
+}
+.container .cards-container{
+  display:inline-flex;
+}
+h1{
+  color:darkslategray !important;
+}
+hr{
+  margin-top: 1%;
+  border-color:darkgrey;
+}
+.cards{
+  background: white;
+  border-radius: 2px;
+  margin: 0 20px;
+  width: auto;
+  display: inline-flex;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  max-height: 200px;
+}
+.cards .item-details{
+padding: 6px 56px;
+text-align: center;
+}
+.cards .item-details .item-head{
+color: dodgerblue;
+font-size:24px;
+}
+.cards .item-details .item-body{
+  color: dodgerblue;
+  font-size: 58px;
+  padding-top: 12px;
+}
+.review-cards{
+  background: white;
+  border-radius: 2px;
+  margin: 0 20px;
+  width: 581px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  max-height: 300px;
+  color: dodgerblue;
+}
+.review-cards .review-card{
+  font-size: 11px;
+  max-height: 150px;
+  border:1px solid #e5e5e5;
+}
+.review-cards .review-card p{
+margin:0;
+}
+.revenue-report{
+  margin-top: 13.5%;
+  color: dodgerblue !important;
+}

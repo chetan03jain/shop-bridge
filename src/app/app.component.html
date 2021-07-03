@@ -1,0 +1,45 @@
+<nav class="navbar navigation-bar-backgroud navbar-fixed-top" [ngClass]="{'admin-background':!normalUser}">
+  <div class="container-fluid">
+    <div class="navbar-header brand-placement">
+      <span class="glyphicon glyphicon-shopping-cart shop-icon"></span>
+      <a class="navbar-brand nav-font" routerLink="" (click)="navigateToHome()"><strong>ShopBridge</strong></a>
+    </div>
+    <div class="search-bar">
+      <form>
+        <div class="form-group search-area">
+          <input class="form-control search-box" type="text" placeholder="Search">
+          <button class="btn search-icon">
+            <span class="glyphicon glyphicon-search icon-search"></span>
+          </button>
+          <label class="user-label">Customer</label>
+          <label class="switch">
+            <input type="checkbox" #switchUser (change)="changeUser($event)" [checked]="!normalUser">
+            <span class="slider round"></span>
+          </label>
+          <label class="user-label">Product Seller</label>
+        </div>
+      </form>
+    </div>
+    <ul class="nav navbar-nav navbar-right login-section">
+      <li><a class="nav-font"  [popover]="popTemplate" [outsideClick]="true" popoverTitle="Login"><span class="glyphicon glyphicon-log-in icon-login-signup"></span>Login</a></li>
+      <ng-template #popTemplate>
+        <form>
+          <label>Email:</label>
+          <input type="text" class="form-control field-margin">
+
+          <label>Password:</label>
+          <input type="password" class="form-control">
+          <a class="field-margin" href="#" style=" font-size: 12px;">Forgot Password?</a><br>
+          <button class="btn btn-primary login-button">Login</button>
+          <hr>
+          <span class="field-margin register">Not an existing user? <a href="#">Register</a></span>
+        </form>
+      </ng-template>
+      <li><a class="nav-font"><span class="glyphicon glyphicon-user icon-login-signup"></span>Sign Up</a></li>
+    </ul>
+  </div>
+</nav>
+<div>
+  <router-outlet></router-outlet>
+</div>
+

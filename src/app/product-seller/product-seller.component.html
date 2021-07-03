@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="left-nav">
+    <span class="glyphicon glyphicon-pencil edit"></span>
+  <div class="profile-section">
+    <span class="profile-image"></span>
+    <p class="company-name">Company Name</p>
+    <hr>
+    <p class="seller-name">Seller Name</p>
+  </div>
+  <div class="navigation-section">
+    <ul class="nav-list">
+      <li class="list-item" [ngClass]="{'selected':selectedTab=='Dashboard'}" (click)="changeTab('Dashboard')">Dashboard</li>
+      <li class="list-item " [ngClass]="{'selected':selectedTab=='Inventory'}" (click)="changeTab('Inventory')">Inventory</li>
+    </ul>
+  </div>
+</div>
+<div class="right-container">
+  <app-dashboard *ngIf="selectedTab=='Dashboard'"></app-dashboard>
+  <app-inventory *ngIf="selectedTab=='Inventory'"></app-inventory>
+</div>
+</div>

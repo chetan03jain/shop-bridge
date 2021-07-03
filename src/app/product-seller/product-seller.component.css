@@ -1,0 +1,80 @@
+.container{
+  background-image: url('../../assets/images/3.jpg');
+  margin-top: 65px;
+  width: 100%;
+  display: inline-flex;
+  padding: 0;
+  height: 685px;
+}
+.container .left-nav{
+  background-color: darkslategray;
+  color: #fff;
+  width: 15%;
+  height: auto;
+}
+.container .left-nav .edit{
+  margin-left: 88%;
+  margin-top: 4%;;
+}
+.container .left-nav .edit:hover{
+  cursor: pointer;
+}
+.container .left-nav .profile-section{
+  margin-top: 10%;
+}
+.container .left-nav .profile-section .profile-image{
+  height: 110px;
+  width: 110px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 20%;
+}
+.container .left-nav .profile-section .company-name{
+margin-left:17%;
+margin-top: 2%;
+font-size:17px;
+margin-bottom: 0;
+}
+.container .left-nav .profile-section .seller-name{
+font-size: 12px;
+margin-top: 2%;
+margin-left: 27%;
+}
+hr{
+  width: 70%;
+  margin-top: 2% !important;
+  padding: 0;
+  margin-left: 11%;
+  margin-bottom: 0;
+}
+.container .left-nav .navigation-section{
+  margin-top: 20%;
+}
+.container .left-nav .navigation-section .nav-list{
+ list-style-type: none;
+ margin-left: 0;
+ padding-left: 0;
+ color:#fff;
+}
+.container .left-nav .navigation-section .nav-list .list-item{
+  list-style-type: none;
+  font-size: 16px;
+  padding: 10px 20px;
+ }
+ .container .left-nav .navigation-section .nav-list .list-item:hover{
+  cursor: pointer;
+ }
+.selected{
+  height: 40px;
+  width:100%;
+  background-color: white;
+  color:darkslategray;
+  font-weight: 600;
+
+}
+.container .right-container{
+  max-height: calc(100vh - 72px);
+  overflow: auto;
+  width: 85%;
+}

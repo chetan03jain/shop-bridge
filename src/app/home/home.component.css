@@ -1,0 +1,16 @@
+.image-banner{
+  width: 60%;
+  position: relative;
+  left: 20%;
+  padding: 3px 0px;
+}
+.banner-background{
+  background-image: url("../../assets/images/3.jpg");
+  margin-top: 65px;
+}
+.cards-display{
+  display: inline-flex;
+  margin-top: 7px;
+  background-image: url("../../assets/images/3.jpg");
+ width:100%;
+}

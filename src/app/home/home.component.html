@@ -1,0 +1,14 @@
+<div class="banner-background">
+  <div class="image-banner">
+    <carousel [interval]="5000" >
+      <slide *ngFor="let slide of slides; let index=index">
+        <img [src]="slide.image" style="display: block; width: 100%;">
+      </slide>
+    </carousel>
+  </div>
+</div>
+<div class="cards-display" id='cardsDisplay'>
+<ng-container *ngFor="let item of items" >
+  <homepage-cards [item]="item"></homepage-cards>
+</ng-container>
+</div>

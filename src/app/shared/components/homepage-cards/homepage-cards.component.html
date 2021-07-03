@@ -1,0 +1,13 @@
+<div class="cards">
+<img [src]="item.image" class="card-img">
+<div class="item-details">
+  <span class="item-name">{{item.name}}</span>
+  <p style="margin-top: 5px;">
+    <span class="glyphicon glyphicon-star" *ngFor="let star of stars(item.rating)" style="color: orange;"></span>
+</p>
+  <p class="item-price">{{item.price}}</p>
+  <ul class="item-spec-list">
+    <li class="item-specs"*ngFor="let detail of item.details">{{detail}}</li>
+  </ul>
+</div>
+</div>
