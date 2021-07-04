@@ -30,6 +30,8 @@ export class InventoryComponent implements OnInit {
       isAddItem:true
     };
     this.bsModalRef = this.modalService.show(ModalComponent , {initialState});
+    this.itemsList=this.inventoryService.getItemsInInventory();
+    this.tempItemsList=this.inventoryService.getItemsInInventory();
   }
   deleteItem(index){
     this.itemDeleted=true;
@@ -50,6 +52,9 @@ export class InventoryComponent implements OnInit {
       editImage:item.image
     };
     this.bsModalRef = this.modalService.show(ModalComponent , {initialState});
+    this.itemsList=this.inventoryService.getItemsInInventory();
+    this.tempItemsList=this.inventoryService.getItemsInInventory();
+
   }
   searchInItemList(event){
     let value=event.target.value;

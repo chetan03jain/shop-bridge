@@ -62,11 +62,13 @@ export class AppComponent implements OnInit {
   emailValueChange(event){
     if(event!=''){
       this.emailIsEmpty=false;
+      this.emailIsValid=true;
     }
   }
   passwordValueChange(event){
     if(event!=''){
       this.passwordIsEmpty=false;
+      this.passwordIsValid=true;
     }
   }
 }

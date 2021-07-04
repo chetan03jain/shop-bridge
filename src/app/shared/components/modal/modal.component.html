@@ -16,7 +16,7 @@
     </div>
     <div class="fields">
   <label>Quantity:</label><span class="red-asterik">*</span>
-  <input type="number" class="form-control" name="quantity" ngModel id="quantity" [ngModel]="editQuantity" min="1" (ngModelChange)="quantityValueChange($event)" placeholder="Enter toatl quantity">
+  <input type="number" class="form-control" name="quantity" ngModel id="quantity" [ngModel]="editQuantity" min="1" (ngModelChange)="quantityValueChange($event)" placeholder="Enter total quantity">
   <div class="text-danger" *ngIf="quantityIsEmpty">
     Qunatity is required
   </div>
