@@ -10,6 +10,7 @@ import { UserService } from './shared/services/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  title='shop-bridgr'
   normalUser:boolean=true;
   emailIsEmpty:boolean=false;
   passwordIsEmpty:boolean=false;
