@@ -2,10 +2,10 @@
   <div class="left-nav">
     <span class="glyphicon glyphicon-pencil edit" title="Edit profile"></span>
   <div class="profile-section">
-    <span class="profile-image"></span>
-    <p class="company-name">Company Name</p>
+    <img [src]="sellerInfo?.companyDetails?.companyLogo" class="profile-image">
+    <p class="company-name">{{sellerInfo?.companyDetails?.copmanyName}}</p>
     <hr>
-    <p class="seller-name">Seller Name</p>
+    <p class="seller-name">{{sellerInfo?.firstName}}</p>
   </div>
   <div class="navigation-section">
     <ul class="nav-list">

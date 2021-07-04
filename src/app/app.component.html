@@ -11,35 +11,47 @@
           <button class="btn search-icon">
             <span class="glyphicon glyphicon-search icon-search"></span>
           </button>
-          <label class="user-label">Customer</label>
-          <label class="switch">
+          <label *ngIf="userService.isUserSeller"class="user-label">Customer</label>
+          <label class="switch" *ngIf="userService.isUserSeller">
             <input type="checkbox" #switchUser (change)="changeUser($event)" [checked]="!normalUser">
             <span class="slider round"></span>
           </label>
-          <label class="user-label">Product Seller</label>
+          <label class="user-label" *ngIf="userService.isUserSeller">Product Seller</label>
         </div>
       </form>
     </div>
-    <ul class="nav navbar-nav navbar-right login-section">
+    <ul class="nav navbar-nav navbar-right login-section" *ngIf="!userService.isUserLoggedIn && !userService.isUserRegistered">
       <li><a class="nav-font"  [popover]="popTemplate" [outsideClick]="true" popoverTitle="Login"><span class="glyphicon glyphicon-log-in icon-login-signup"></span>Login</a></li>
       <ng-template #popTemplate>
-        <form>
+        <form #myForm="ngForm" (ngSubmit)="logIn(myForm)">
           <label>Email:</label>
-          <input type="text" class="form-control field-margin">
-
+          <input type="text" class="form-control field-margin" required ngModel id="email" name="email" (ngModelChange)="emailValueChange($event)">
+          <div class="text-danger" *ngIf="emailIsEmpty">
+            Email is required
+          </div>
           <label>Password:</label>
-          <input type="password" class="form-control">
+          <input type="password" class="form-control" required ngModel id="password" name="password" (ngModelChange)="passwordValueChange($event)">
+          <div class="text-danger" *ngIf="passwordIsEmpty">
+            Password is required
+          </div>
           <a class="field-margin" href="#" style=" font-size: 12px;">Forgot Password?</a><br>
-          <button class="btn btn-primary login-button">Login</button>
+          <div class="text-danger" *ngIf="(!passwordIsValid || !emailIsValid) && (!emailIsEmpty && !passwordIsEmpty)">
+            Email or Password is incorrect
+          </div>
+          <button class="btn btn-primary login-button" type="submit">Login</button>
           <hr>
           <span class="field-margin register">Not an existing user? <a href="#">Register</a></span>
         </form>
       </ng-template>
-      <li><a class="nav-font"><span class="glyphicon glyphicon-user icon-login-signup"></span>Sign Up</a></li>
+      <li><a class="nav-font" routerLink="signup"><span class="glyphicon glyphicon-user icon-login-signup"></span>Sign Up</a></li>
     </ul>
+    <span *ngIf="userService.isUserLoggedIn || userService.isUserRegistered"class="welcome">Welcome {{userService.loggedInUserName}}!</span>
+    <span *ngIf="userService.isUserLoggedIn || userService.isUserRegistered"class="sign-out" (click)="signOut()"><span class="glyphicon glyphicon-log-in icon-login-signup"></span>Sign Out</span>
   </div>
 </nav>
 <div>
   <router-outlet></router-outlet>
 </div>
+<alert type="success" *ngIf="userService.isUserRegistered" dismissOnTimeout="5000" dismissible="true" class="alert-toaster" ><strong>User registered successfully!</strong></alert>
+<alert type="success" *ngIf="userService.isUserLoggedIn" dismissOnTimeout="5000" dismissible="true" class="alert-toaster" ><strong>User logged in successfully!</strong></alert>
 

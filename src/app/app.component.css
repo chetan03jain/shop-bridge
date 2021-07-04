@@ -147,3 +147,26 @@ hr{
 li:hover{
   cursor: pointer;
 }
+.welcome{
+  position: absolute;
+  right: 13%;
+  color: white;
+  font-size: 19px;
+  top: 21%;
+}
+.sign-out{
+  position: absolute;
+  right: 6%;
+  color: white;
+  font-size: 14px;
+  top: 29%;
+}
+.sign-out:hover{
+  cursor: pointer;
+}
+.alert-toaster{
+  position: fixed;
+  top: 91%;
+  left: 43%;
+  width: 361px;
+}

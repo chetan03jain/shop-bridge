@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../shared/services/user.service';
 
 @Component({
   selector: 'app-product-seller',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductSellerComponent implements OnInit {
 selectedTab='Dashboard';
-  constructor() { }
+sellerInfo:any;
+  constructor(private userService:UserService) {
+  }
 
   ngOnInit(): void {
+this.sellerInfo=this.userService.getSellerInfo();
   }
 changeTab(tab:string){
   this.selectedTab=tab;

@@ -1,0 +1,124 @@
+<div class="container">
+  <h1>Sign up</h1>
+  <hr><br><br>
+    <div>
+      <form style="width: 100%;" #myForm="ngForm" (ngSubmit)="onRegister(myForm)">
+        <fieldset style="float: left;width: 45%;">
+         <legend style="color:dodgerblue;">User Details:</legend>
+         <div style="display: flex;margin-bottom: 6%;">
+        <div class="fields">
+          <label for="fname">First name:</label><span class="red-asterik">*</span>
+          <input type="text" id="fname" name="fname"  ngModel class="form-control" placeholder="Enter first name" (ngModelChange)="valueChange($event,1)">
+          <div class="text-danger" *ngIf="firstNameIsEmpty">
+            First name is required
+          </div>
+        </div>
+        <div class="fields">
+          <label for="lname">Last name:</label>
+          <input type="text" id="lname" name="lname" ngModel class="form-control" placeholder="Enter last name">
+        </div>
+        </div>
+        <div style="display: flex;margin-bottom: 6%;">
+        <div class="fields">
+          <label for="email">Email:</label><span class="red-asterik">*</span>
+          <input type="email" id="email" name="email"  ngModel  class="form-control" placeholder="Enter email" (ngModelChange)="valueChange($event,2)">
+          <div class="text-danger" *ngIf="emailIsEmpty">
+            Email is required
+          </div>
+        </div>
+        <div class="fields">
+          <label for="phone">Phone Number:</label><span class="red-asterik">*</span>
+          <input type="number" id="phone" name="phone"  ngModel  class="form-control" placeholder="Enter phone number" onKeyPress="if(this.value.length==10) return false;" (ngModelChange)="valueChange($event,3)">
+          <div class="text-danger" *ngIf="phoneNumberIsEmpty">
+            Phone number is required
+          </div>
+        </div>
+        </div>
+        <div style="display: flex;margin-bottom: 6%;">
+        <div class="fields">
+          <label for="birthday">D.O.B:</label>
+          <input type="date" id="birthday" name="birthday" class="form-control" ngModel>
+        </div>
+        <div class="fields">
+          <label for="address">Address:</label><span class="red-asterik">*</span><br>
+          <textarea rows="5" cols="25" id="address"  name="address" ngModel class="form-control" placeholder="Enter complete address" (ngModelChange)="valueChange($event,4)"></textarea>
+          <div class="text-danger" *ngIf="addressIsEmpty">
+            Address is required
+          </div>
+        </div>
+        </div>
+        <div style="display: flex;margin-bottom: 6%;">
+          <div class="fields">
+            <label for="password">Password:</label><span class="red-asterik">*</span>
+            <input type="password" id="password"  name="password" ngModel class="form-control" placeholder="Enter password" (ngModelChange)="valueChange($event,5)">
+            <div class="text-danger" *ngIf="passwordIsEmpty">
+              Password is required
+            </div>
+          </div>
+          <div class="fields">
+            <label for="confirmpassword">Confirm Password:</label><span class="red-asterik">*</span>
+            <input type="password" id="confirmpassword"  name="confirmpassword" ngModel  class="form-control" placeholder="Enter confirm password" (ngModelChange)="valueChange($event,6)">
+            <div class="text-danger" *ngIf="confirmPasswordIsEmpty">
+              Confirm password is required
+            </div>
+            <div class="text-danger" *ngIf="isPassowordMatch && !confirmPasswordIsEmpty">
+              Password doesn't match
+            </div>
+          </div>
+          </div>
+          <div style="display: flex;margin-bottom: 6%;">
+              <input type="checkbox" id="seller" name="seller" style="margin-right: 7px;" (change)="sellerValueChanged($event)">Are you seller?
+            </div>
+        </fieldset>
+        <fieldset style="float: right;width: 45%;" *ngIf="isSeller">
+          <legend style="color:dodgerblue;">Seller Details:</legend>
+          <div style="display: flex;margin-bottom: 6%;">
+         <div class="fields">
+           <label for="fname">Company name:</label><span class="red-asterik">*</span>
+           <input type="text" id="companyname"  name="companyname" ngModel  class="form-control" placeholder="Enter company name" (ngModelChange)="valueChange($event,7)">
+          <div class="text-danger" *ngIf="companyNameIsEmpty">
+            Company name is required
+          </div>
+          </div>
+         <div class="fields">
+           <label for="lname">Type of products sold:</label><span class="red-asterik">*</span>
+           <input type="text" id="type" name="type"   ngModel  class="form-control" placeholder="Enter type" (ngModelChange)="valueChange($event,8)">
+          <div class="text-danger" *ngIf="typeIsEmpty">
+            Type is required
+          </div>
+          </div>
+         </div>
+         <div style="display: flex;margin-bottom: 6%;">
+         <div class="fields">
+           <label for="email">Company email:</label>
+           <input type="email" id="companyemail" name="companyemail" ngModel class="form-control" placeholder="Enter company email">
+         </div>
+         <div class="fields">
+           <label for="phone">Contact number</label>
+           <input type="number" id="companyphone" name="companyphone" ngModel class="form-control" placeholder="Enter contact number" onKeyPress="if(this.value.length==10) return false;" >
+         </div>
+         </div>
+         <div style="display: flex;margin-bottom: 6%;">
+         <div class="fields">
+           <label for="birthday">Company founded:</label>
+           <input type="date" id="companyfounded" name="companyfounded" ngModel class="form-control">
+         </div>
+         <div class="fields">
+           <label for="companyaddress">Company address:</label><span class="red-asterik">*</span><br>
+           <textarea rows="5" cols="25" id="companyaddress"  name="companyaddress" ngModel class="form-control" placeholder="Enter company complete address" (ngModelChange)="valueChange($event,9)"></textarea>
+          <div class="text-danger" *ngIf="companyAddressIsEmpty">
+            Company address is required
+          </div>
+          </div>
+         </div>
+         <div style="display: flex;margin-bottom: 6%;">
+           <div class="fields">
+            <label>Company logo:</label>
+            <input type="file" accept="image/*" multiple="true" name="images" (change)="onSelectFile($event)">
+           </div>
+           </div>
+         </fieldset>
+         <input type="submit" value="Register" class="btn btn-primary register-button">
+       </form>
+    </div>
+</div>

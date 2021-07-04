@@ -9,24 +9,14 @@
    <div style="display: flex;margin-bottom: 6%;">
     <div class="fields">
       <label>Name:</label><span class="red-asterik">*</span>
-      <input type="text" class="form-control" name="name" ngModel [ngModel]="editName" id="name" #name="ngModel" required (ngModelChange)="nameValueChange($event)">
-      <div *ngIf="name.invalid &&(name.dirty || name.touched)" class="text-danger">
-        <div *ngIf="name.errors.required">
-          Name is required
-        </div>
-      </div>
+      <input type="text" class="form-control" name="name" ngModel [ngModel]="editName" id="name"  (ngModelChange)="nameValueChange($event)" placeholder="Enter item name">
       <div class="text-danger" *ngIf="nameIsEmpty">
         Name is required
       </div>
     </div>
     <div class="fields">
   <label>Quantity:</label><span class="red-asterik">*</span>
-  <input type="number" class="form-control" name="quantity" ngModel id="quantity" [ngModel]="editQuantity" #quantity="ngModel" required min="1" (ngModelChange)="quantityValueChange($event)">
-  <div *ngIf="quantity.invalid &&(quantity.dirty || quantity.touched)" class="text-danger">
-    <div *ngIf="quantity.errors.required">
-      Quantity is required
-    </div>
-  </div>
+  <input type="number" class="form-control" name="quantity" ngModel id="quantity" [ngModel]="editQuantity" min="1" (ngModelChange)="quantityValueChange($event)" placeholder="Enter toatl quantity">
   <div class="text-danger" *ngIf="quantityIsEmpty">
     Qunatity is required
   </div>
@@ -35,12 +25,7 @@
    <div style="display: flex;margin-bottom: 6%;">
     <div class="fields">
       <label>Price:</label><span class="red-asterik">*</span>
-      <input type="number" class="form-control" name="price" ngModel [ngModel]="editPrice" #price="ngModel" id="price" required min="1" (ngModelChange)="priceValueChange($event)">
-      <div *ngIf="price.invalid &&(price.dirty || price.touched)" class="text-danger">
-        <div *ngIf="price.errors.required">
-          Price is required
-        </div>
-      </div>
+      <input type="number" class="form-control" name="price" ngModel [ngModel]="editPrice"  id="price"  min="1" (ngModelChange)="priceValueChange($event)" placeholder="Enter price/per unit">
       <div class="text-danger" *ngIf="priceIsEmpty">
         Price is required
       </div>
@@ -62,7 +47,7 @@
    </div>
    <div style="margin-bottom: 6%;">
     <label>Description:</label>
-    <textarea cols="82" rows="5" style="border-color: #ccc;" name="description" ngModel [ngModel]="editDescription"></textarea>
+    <textarea cols="82" rows="5" style="border-color: #ccc;" name="description" ngModel [ngModel]="editDescription" placeholder="Enter product description"></textarea>
    </div>
    <div style="margin-bottom: 6%;">
     <label>Image Upload:</label>

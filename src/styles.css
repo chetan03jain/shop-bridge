@@ -5,7 +5,8 @@ body{
 }
 .popover{
   width:400px;
-  height: 285px;
+  height: auto;
+  min-height: 285px;
 }
 .popover-title{
   font-size: 17px;

@@ -1,0 +1,33 @@
+.container{
+  background-image: url('../../assets/images/3.jpg');
+  margin-top: 65px;
+  width: 100%;
+  padding: 0 60px;
+  height: 685px;
+  }
+  h1{
+    color:dodgerblue !important;
+  }
+  hr{
+    margin-top: 1%;
+    border-color: darkgrey;
+    width: 69%;
+    float: left;
+  }
+  .fields{
+    margin-right: 5%;
+    width: 45%;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .red-asterik{
+    color: red;
+  }
+  .register-button{
+    position: absolute;
+    top: 92%;
+    left: 47%;
+  }

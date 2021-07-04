@@ -13,6 +13,8 @@ import { InventoryComponent } from './product-seller/inventory/inventory.compone
 import { ModalModule } from 'ngx-bootstrap/modal';
 import {AlertModule} from 'ngx-bootstrap/alert';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { UserRegisterationComponent } from './user-registeration/user-registeration.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
     ProductSellerComponent,
     HomeComponent,
     DashboardComponent,
-    InventoryComponent
+    InventoryComponent,
+    UserRegisterationComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
     RouterModule.forRoot(AppRoutes),
     ModalModule.forRoot(),
     AlertModule,
-    TypeaheadModule
+    TypeaheadModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

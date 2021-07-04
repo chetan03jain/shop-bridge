@@ -42,7 +42,7 @@ constructor(public bsModalRef:BsModalRef, private inventoryService:InventoryServ
     this.nameIsEmpty=item.name==''?true:false;
     this.quantityIsEmpty=(!item.quantity || item.quantity==undefined)?true:false;
     this.priceIsEmpty=(!item.price||item.price==undefined)?true:false;
-    if(!form.invalid){
+    if(!this.nameIsEmpty && !this.quantityIsEmpty && !this.priceIsEmpty){
       if(this.isAddItem){
         this.inventoryService.showSuccessAlert=true;
         this.inventoryService.addItemsToInventory(item);
