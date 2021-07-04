@@ -4,4 +4,49 @@
   <div class="add-inventory">
     <a (click)="addItems()">+Add Item</a>
   </div>
+  <div class="inventory-list">
+    <h4>Items in Inventory</h4>
+    <form>
+      <div style="display: flex;margin-left: 647px;
+      padding-top: 11px;">
+        <input class="form-control search-box" type="text" placeholder="Search by name" (keyup)="searchInItemList($event)">
+        <button class="btn search-icon">
+          <span class="glyphicon glyphicon-search icon-search"></span>
+        </button>
+      </div>
+    </form>
   </div>
+  <table class="item-table">
+    <tr class="item-header">
+      <th class="head">Name</th>
+      <th class="head">Total Quantity</th>
+      <th class="head">Price/per unit</th>
+      <th class="head">Category Type</th>
+      <th class="head">Description</th>
+      <th class="head">Image</th>
+    </tr>
+    <tr *ngFor="let item of itemsList; let i = index">
+      <td class="body"[ngClass]="{'zero-quantity':!item.quantity}">{{item.name? item.name : '-'}}</td>
+      <td class="body"[ngClass]="{'zero-quantity':!item.quantity}">{{item.quantity?item.quantity :'0'}}
+        <br>
+        <div *ngIf="!item.quantity" style="color: red;position: absolute;" >
+          <span class="glyphicon glyphicon-alert" style="padding-right: 5px;"></span>
+          <span>Sold out</span>
+        </div>
+    </td>
+      <td class="body" [ngClass]="{'zero-quantity':!item.quantity}">₹{{item.price? item.price : '0'}}</td>
+      <td class="body" [ngClass]="{'zero-quantity':!item.quantity}">{{item.categoryType ? item.categoryType:'-'}}</td>
+      <td class="body" [ngClass]="{'zero-quantity':!item.quantity}">{{item.description ? item.description :'-'}}</td>
+      <td class="body"><img *ngIf="item.image" [src]="item.image" style="width: 20%;" [ngClass]="{'blur-image':!item.quantity}">
+       <span *ngIf="!item.image">-</span>
+      </td>
+      <td style="display: flex; border-bottom: 1px solid darkgrey;padding-bottom: 39px;">
+        <span class="glyphicon glyphicon-pencil edit-icon" title="Edit" (click)="editItem(item,i)"></span>
+        <span class="glyphicon glyphicon-trash delete-icon" title="Delete" (click)="deleteItem(i)"></span>
+      </td>
+    </tr>
+  </table>
+  </div>
+  <alert type="danger" *ngIf="itemDeleted" dismissOnTimeout="5000" dismissible="true" class="alert-toaster"><strong>Item deleted successfully</strong></alert>
+  <alert type="success" *ngIf="inventoryService.showSuccessAlert" dismissOnTimeout="5000" dismissible="true" class="alert-toaster"><strong>Item added successfully</strong></alert>
+  <alert type="success" *ngIf="inventoryService.showEditSuccessAlert" dismissOnTimeout="5000" dismissible="true" class="alert-toaster"><strong>Item edited successfully</strong></alert>

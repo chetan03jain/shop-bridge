@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './product-seller/dashboard/dashboard.component';
 import { InventoryComponent } from './product-seller/inventory/inventory.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import {AlertModule} from 'ngx-bootstrap/alert';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     SharedModule,
     PopoverModule.forRoot(),
     RouterModule.forRoot(AppRoutes),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    AlertModule,
+    TypeaheadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

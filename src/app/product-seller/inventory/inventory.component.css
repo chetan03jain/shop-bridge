@@ -15,3 +15,70 @@ float: right;
 a:hover{
   cursor: pointer;
 }
+.inventory-list{
+  margin-top: 5%;
+  background: darkslategray;
+  color: white;
+  display: flex;
+}
+h4{
+  padding: 10px;
+}
+.inventory-list .search-box{
+  width:300px;
+  border-radius: 0;
+ border-right: 0px;
+}
+.inventory-list .search-icon{
+  height: 33.8px;
+  width: 42px;
+  border-radius: 0;
+  position: relative;
+  top: 0.3px;
+  background: #FFF;
+  border: 1px solid #ccc;
+  border-left: 0px;
+}
+.inventory-list .icon-search{
+  position: relative;
+  top: 2px;
+  color: grey;
+}
+.item-table{
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+}
+.item-table .item-header{
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+}
+.item-table .item-header .head{
+  padding: 10px 120px 10px 0px;
+}
+.item-table .body{
+padding-top: 10px;
+padding-bottom: 10px;
+border-bottom: 1px solid darkgrey;
+}
+.edit-icon{
+  margin-top: 50px;
+    padding-right: 25px;
+}
+.delete-icon{
+  margin-top:50px;
+}
+.edit-icon:hover, .delete-icon:hover{
+  cursor: pointer;
+}
+.alert-toaster{
+  position: fixed;
+  top: 91%;
+  left: 43%;
+  width: 361px;
+}
+.zero-quantity{
+  color: lightgray;
+}
+.blur-image{
+  opacity: 0.3;
+}
